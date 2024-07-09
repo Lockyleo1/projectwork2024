@@ -1,0 +1,81 @@
+/* Stili per l'applicazione */
+.app-container {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+  padding: 110px;
+  font-family: 'Arial', sans-serif;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.dropdown-container {
+  margin-bottom: 20px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #2c2c2c;
+  color: white;
+  font-size: 1rem;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #ea00ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: #83098e;
+}
+
+.chart-container {
+  margin-top: 40px;
+}
+
+.chart-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.chart-description {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.chart-description p {
+  margin-bottom: 10px;
+}

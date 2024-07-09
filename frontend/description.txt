@@ -1,0 +1,39 @@
+1. App.js
+    Descrizione:
+        Questo componente rappresenta l'applicazione principale che gestisce il monitoraggio dello stato dei lavori del Progetto Banda Ultra Larga (BUL) per l'anno 2022.
+        Include tre grafici principali che mostrano i dati dei lavori terminati, in progettazione e in esecuzione, per regione selezionata.
+    Funzionalità principali:
+        Utilizza lo stato per gestire la selezione della regione e i dati dei grafici.
+        Ha funzioni per recuperare i dati dai server tramite richieste HTTP utilizzando Axios:
+        fetchDataTerminati: Recupera i dati dei lavori terminati per la regione selezionata.
+        fetchDataInProgettazione: Recupera i dati dei lavori in progettazione per la regione selezionata.
+        fetchDataInEsecuzione: Recupera i dati dei lavori in esecuzione per la regione selezionata.
+        Include una struttura di interfaccia utente che mostra una descrizione del progetto BUL e i suoi obiettivi principali.
+2. Navbar.js
+    Descrizione:
+        Questo componente rappresenta la barra di navigazione dell'applicazione.
+        Probabilmente include link o pulsanti per navigare tra le diverse sezioni dell'applicazione o per eseguire azioni specifiche.
+3. GraficoTerminati.js
+    Descrizione:
+        Questo componente visualizza un grafico a barre dei dati relativi ai lavori terminati per la regione selezionata.
+    Costruzione:
+        Utilizza la libreria react-chartjs-2 insieme a Chart.js per creare il grafico.
+        Registra i componenti necessari di Chart.js (elementi barra, scale, tooltip, legenda).
+        Riceve i dati tramite props (data) e costruisce il grafico con due dataset distinti: "Terminati FWA" e "Terminati Fibra".
+4. GraficoInProgettazione.js
+    Descrizione:
+        Questo componente visualizza un grafico a barre dei dati relativi ai lavori in fase di progettazione per la regione selezionata.
+    Costruzione:
+        Utilizza la libreria react-chartjs-2 insieme a Chart.js per creare il grafico.
+        Registra i componenti necessari di Chart.js (elementi barra, scale, tooltip, legenda).
+        Riceve i dati tramite props (data) e costruisce il grafico con due dataset distinti: "In Progettazione FWA" e "In Progettazione Fibra".
+5. GraficoInEsecuzione.js
+    Descrizione:
+        Questo componente visualizza un grafico a barre dei dati relativi ai lavori in esecuzione per la regione selezionata.
+    Costruzione:
+        Utilizza la libreria react-chartjs-2 insieme a Chart.js per creare il grafico.
+        Registra i componenti necessari di Chart.js (elementi barra, scale, tooltip, legenda).
+        Riceve i dati tramite props (data) e costruisce il grafico con due dataset distinti: "In Esecuzione FWA" e "In Esecuzione Fibra".
+        Gestisce il caso in cui i dati non siano disponibili mostrando un messaggio di errore.
+
+Questi componenti insieme formano l'interfaccia dell'applicazione React per il monitoraggio dei lavori del Progetto BUL, con ogni grafico che rappresenta uno stato diverso dei lavori per le varie regioni selezionate dall'utente.

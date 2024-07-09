@@ -1,0 +1,68 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2c2550, #8c8ef9);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 150px; /* Regola la larghezza dell'immagine del profilo */
+  height: 150px; /* Regola l'altezza dell'immagine del profilo */
+  border-radius: 20%;/* Assicura che l'immagine sia rotonda */
+  object-fit: contain; /* Mantiene le proporzioni originali e adatta l'immagine */
+  margin-right: 10px; /* Aggiunge un margine a destra per separare l'immagine dal testo */
+}
+
+.navbar-center {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-name {
+  margin-right: 20px; /* Aggiunge un margine a destra per separare il nome dall'area dei link */
+  color: #000000; 
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ffcc00;
+}
+
+body {
+  padding-top: 5rem;
+  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+}
