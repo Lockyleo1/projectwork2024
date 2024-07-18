@@ -24,15 +24,15 @@ df_geo_citta = df_geo_citta[df_geo_citta_filter]
 def get_regione_data(regione):
     df_regione = df[df['Regione'] == regione]
 
-    terminati_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_term, na=False)) & (df_regione['Piano FWA (anno)'] == 2022)]['Provincia'].value_counts()
-    in_esecuzione_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_esec, na=False)) & (df_regione['Piano FWA (anno)'] == 2022)]['Provincia'].value_counts()
-    in_progettazione_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_prog, na=False)) & (df_regione['Piano FWA (anno)'] == 2022)]['Provincia'].value_counts()
-    in_collaudo_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_collaudo, na=False)) & (df_regione['Piano FWA (anno)'] == 2022)]['Provincia'].value_counts()
+    terminati_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_term, na=False)) ]['Provincia'].value_counts()
+    in_esecuzione_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_esec, na=False)) ]['Provincia'].value_counts()
+    in_progettazione_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_prog, na=False)) ]['Provincia'].value_counts()
+    in_collaudo_FWA = df_regione[(df_regione['Stato FWA'].str.contains(str_collaudo, na=False)) ]['Provincia'].value_counts()
     
-    terminati_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_term, na=False)) & (df_regione['Piano fibra (anno)'] == 2022)]['Provincia'].value_counts()
-    in_esecuzione_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_esec, na=False)) & (df_regione['Piano fibra (anno)'] == 2022)]['Provincia'].value_counts()
-    in_progettazione_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_prog, na=False)) & (df_regione['Piano fibra (anno)'] == 2022)]['Provincia'].value_counts()
-    in_collaudo_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_collaudo, na=False)) & (df_regione['Piano fibra (anno)'] == 2022)]['Provincia'].value_counts()
+    terminati_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_term, na=False))]['Provincia'].value_counts()
+    in_esecuzione_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_esec, na=False))]['Provincia'].value_counts()
+    in_progettazione_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_prog, na=False))]['Provincia'].value_counts()
+    in_collaudo_Fibra = df_regione[(df_regione['Stato Fibra'].str.contains(str_collaudo, na=False))]['Provincia'].value_counts()
     return {
         'terminati_FWA': terminati_FWA.to_dict(),
         'in_esecuzione_FWA': in_esecuzione_FWA.to_dict(),
@@ -45,7 +45,7 @@ def get_regione_data(regione):
     }
 
 # Endpoint per ottenere i dati dei lavori terminati per una regione specifica
-@app.route('/dataTerminati/<regione>', methods=['GET'])
+@app.route('/api/dataTerminati/<regione>', methods=['GET'])
 def get_data_terminati(regione):
     regione_data = get_regione_data(regione)
     data = {
@@ -55,7 +55,7 @@ def get_data_terminati(regione):
     return jsonify(data)
 
 # Endpoint per ottenere i dati dei lavori in progettazione per una regione specifica
-@app.route('/dataInProgettazione/<regione>', methods=['GET'])
+@app.route('/api/dataInProgettazione/<regione>', methods=['GET'])
 def get_data_in_progettazione(regione):
     regione_data = get_regione_data(regione)
     data = {
@@ -65,7 +65,7 @@ def get_data_in_progettazione(regione):
     return jsonify(data)
 
 # Endpoint per ottenere i dati dei lavori in esecuzione per una regione specifica
-@app.route('/dataInEsecuzione/<regione>', methods=['GET'])
+@app.route('/api/dataInEsecuzione/<regione>', methods=['GET'])
 def get_data_in_esecuzione(regione):
     regione_data = get_regione_data(regione)
     data = {
@@ -75,7 +75,7 @@ def get_data_in_esecuzione(regione):
     return jsonify(data)
 
 # Endpoint per ottenere i dati dei lavori in collaudo per una regione specifica
-@app.route('/dataInCollaudo/<regione>', methods=['GET'])
+@app.route('/api/dataInCollaudo/<regione>', methods=['GET'])
 def get_data_in_collaudo(regione):
     regione_data = get_regione_data(regione)
     data = {

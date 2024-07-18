@@ -25,7 +25,7 @@ const regionOptions = [
   { value: 'Sardegna', label: 'Sardegna' },
   { value: 'Sicilia', label: 'Sicilia' },
   { value: 'Toscana', label: 'Toscana' },
-  { value: 'Trentino Alto Adige', label: 'Trentino Alto Adige' },
+  { value: 'Trentino Alto Adige-Trento', label: 'Trentino Alto Adige' },
   { value: 'Umbria', label: 'Umbria' },
   { value: "Valle d'Aosta", label: "Valle d'Aosta" },
   { value: 'Veneto', label: 'Veneto' },
@@ -55,7 +55,7 @@ const App = () => {
   const fetchData = async (endpoint, setData) => {
     if (region) {
       try {
-        const response = await axios.get(`http://localhost:5000/${endpoint}/${region}`);
+        const response = await axios.get(`http://localhost:80/api/${endpoint}/${region}`);
         setData(response.data);
       } catch (error) {
         console.error('Errore durante il recupero dei dati', error);

@@ -11,10 +11,10 @@ COPY italy_geo.csv .
 COPY pcn_route.csv .
 
 # Installa le dipendenze Python
-RUN pip install flask pandas flask-cors
+RUN pip install flask pandas flask-cors gunicorn
 
 # Espone la porta 5000 del container
 EXPOSE 5000
 
 # Comando di avvio del server Flask
-CMD ["python", "webserver.py"]
+CMD gunicorn --bind 0.0.0.0:5000 webserver:app
